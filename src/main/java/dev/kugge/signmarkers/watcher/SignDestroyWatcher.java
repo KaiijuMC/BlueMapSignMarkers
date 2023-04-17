@@ -6,7 +6,8 @@ import de.bluecolored.bluemap.api.markers.Marker;
 import de.bluecolored.bluemap.api.markers.MarkerSet;
 import dev.kugge.signmarkers.SignMarkers;
 import org.bukkit.block.Block;
-import org.bukkit.block.Sign;import org.bukkit.event.EventHandler;
+import org.bukkit.block.Sign;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
