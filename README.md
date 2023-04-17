@@ -8,7 +8,17 @@ Compatible with Paper / Folia.
 Compile .jar and put it into `plugins`  
 Create `markers` directory inside `bluemap/web` directory.  
 Put markers png into `bluemap/web/markers`.  
-Please use 24x24px png images. Other images are not supported.  
+Please use png images. Other images are not supported.  
+
+## How to use
+Place a sign.
+
+- 1st line: "[map]"
+- 2nd line: text
+- 3rd line: text
+- 4th line: image name (without .png)
+
+The marker is removed when the sign is destroyed.
 
 ## Example
 
