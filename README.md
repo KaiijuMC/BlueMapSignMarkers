@@ -18,6 +18,7 @@ Place a sign.
 - 3rd line: text
 - 4th line: image name (without .png)
 
+If path to `bluemap/web/markers/icon_name.png` is successful, the sign and BlueMap markers will update.
 The marker is removed when the sign is destroyed.
 
 ## Example
