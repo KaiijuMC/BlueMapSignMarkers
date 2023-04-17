@@ -11,12 +11,14 @@ import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 public class SignMarkers extends JavaPlugin {
 
+    public static Path webRoot;
     public static SignMarkers instance;
     public static Logger logger;
     public static Map<World, MarkerSet> markerSet = new ConcurrentHashMap<>();
@@ -30,6 +32,7 @@ public class SignMarkers extends JavaPlugin {
             loadWorldMarkerSet(world);
             registerWorld(world);
         }
+        BlueMapAPI.onEnable(api -> webRoot = api.getWebApp().getWebRoot());
         Bukkit.getPluginManager().registerEvents(new SignWatcher(), this);
         Bukkit.getPluginManager().registerEvents(new SignDestroyWatcher(), this);
     }

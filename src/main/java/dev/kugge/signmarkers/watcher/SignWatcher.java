@@ -12,7 +12,8 @@ import com.flowpowered.math.vector.Vector3d;
 import com.flowpowered.math.vector.Vector2i;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;import java.io.IOException;
+import java.io.File;
+import java.io.IOException;
 
 public class SignWatcher implements Listener {
     @EventHandler
@@ -24,8 +25,8 @@ public class SignWatcher implements Listener {
         Component cicon = event.line(3);
         if (cicon == Component.empty() || cicon == null) return;
 
-        String icon = "markers/" + LegacyComponentSerializer.legacySection().serialize(cicon) + ".png";
-        File iconFile = new File("bluemap/web/" + icon);
+        String icon = "./markers/" + LegacyComponentSerializer.legacySection().serialize(cicon) + ".png";
+        File iconFile = new File(SignMarkers.webRoot + "/" + icon);
         if (!iconFile.exists()) return;
 
         Vector2i anchor;
