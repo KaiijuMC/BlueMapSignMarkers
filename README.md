@@ -24,4 +24,6 @@ The marker is removed when the sign is destroyed.
 ## Example
 
 This will create a "TestTest" marker on the map with `bluemap/web/markers/icon_name.png` as icon.  
-![Demo Image](demo.png)
+![Demo Image](demo.png)  
+
+Demo map: https://map.tokaii.fr/
