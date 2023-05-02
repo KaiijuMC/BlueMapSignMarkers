@@ -1,4 +1,4 @@
-# BluemapSignMarkers
+# BlueMapSignMarkers
 
 This plugin replicates Dynmap sign markers.  
 Compatible with Paper / Folia.
@@ -25,3 +25,7 @@ The marker is removed when the sign is destroyed.
 
 This will create a "TestTest" marker on the map with `bluemap/web/markers/icon_name.png` as icon.  
 ![Demo Image](demo.png)  
+
+## Download
+
+Download on [Modrinth](https://modrinth.com/plugin/bluemapsignmarkers)
