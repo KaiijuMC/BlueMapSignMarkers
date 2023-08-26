@@ -19,11 +19,11 @@ public class SignWatcher implements Listener {
     @EventHandler
     public void onSignWrite(SignChangeEvent event) {
         Component header = event.line(0);
-        if (header == Component.empty() || header == null) return;
+        if (header == null || header == Component.empty()) return;
         if (!header.toString().contains("[map]")) return;
 
         Component cicon = event.line(3);
-        if (cicon == Component.empty() || cicon == null) return;
+        if (cicon == null || cicon == Component.empty()) return;
 
         String icon = "./markers/" + LegacyComponentSerializer.legacySection().serialize(cicon) + ".png";
         File iconFile = new File(SignMarkers.webRoot + "/" + icon);
@@ -40,15 +40,16 @@ public class SignWatcher implements Listener {
             return;
         }
 
-        Component clabel1 = event.line(1);
-        if (clabel1 == Component.empty() || clabel1 == null) return;
-
-        Component clabel2 = event.line(2);
-        String label = LegacyComponentSerializer.legacySection().serialize(clabel1)
-                     + LegacyComponentSerializer.legacySection().serialize(clabel2);
-
         Block block = event.getBlock();
         Vector3d pos = new Vector3d(block.getX(), block.getY(), block.getZ());
+
+        String label = "";
+        for (int i = 1; i <= 3; i++) {
+            Component line = event.line(i);
+            if (line != null && !line.equals(Component.empty())) {
+                label += LegacyComponentSerializer.legacySection().serialize(line);
+            }
+        }
 
         String id = "marker-" + pos.getX() + "-" + pos.getY() + "-" + pos.getZ();
         POIMarker marker = POIMarker.builder().label(label).position(pos).icon(icon, anchor).maxDistance(100000).build();
